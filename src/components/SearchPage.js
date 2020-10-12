@@ -70,9 +70,36 @@ function SearchPage() {
 
                 </div>
             </div>
-            <div className='searchPage_results'>
 
-            </div>
+            {term && (
+                <div className='searchPage_results'>
+                    <p className="searchPage_resultCount">
+                        About {data?.searchInformatiom.formattedTotalResults} results ({data?.searchInformatiom.formattedSearchTime} seconds) for {term}
+                    </p>
+
+                    {data?.item.map(item => (
+                        <div className='searchPage_result'>
+                            <a href={item.link}>
+                                {item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
+                                        <img className="searchPage_resultImage"
+                                        src={item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src}
+                                        alt=""
+                                        />
+                                    )}
+                                {item.displayLink}
+                            </a>
+                            <a
+                            className='searchPage_result 
+                            Title' href={item.link}>
+                                <h2>{item.title} </h2>
+                            </a>
+                            <p className='searchPage_resultSnippet'>
+                                {item.snippet}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     )
 }
