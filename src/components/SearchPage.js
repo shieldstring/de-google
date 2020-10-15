@@ -22,7 +22,7 @@ function SearchPage() {
             <div className='searchPage_header'>
                 <Link to="/">
                     <img
-                        className='search_Page_logo'
+                        className='searchPage_logo'
                         src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
                         alt=""
                     />
@@ -74,11 +74,12 @@ function SearchPage() {
             {term && (
                 <div className='searchPage_results'>
                     <p className="searchPage_resultCount">
-                        About {data?.searchInformatiom.formattedTotalResults} results ({data?.searchInformatiom.formattedSearchTime} seconds) for {term}
+                        About {data?.searchInformation.formattedTotalResults} results ({data?.searchInformation.formattedSearchTime} seconds) for {term}
                     </p>
 
-                    {data?.item.map(item => (
-                        <div className='searchPage_result'>
+                    {data?.items.map(item => (
+                        <div 
+                        className='searchPage_result'>
                             <a href={item.link}>
                                 {item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
                                         <img className="searchPage_resultImage"
@@ -89,11 +90,10 @@ function SearchPage() {
                                 {item.displayLink}
                             </a>
                             <a
-                            className='searchPage_result 
-                            Title' href={item.link}>
+                            className="searchPage_resultTitle" href={item.link}>
                                 <h2>{item.title} </h2>
                             </a>
-                            <p className='searchPage_resultSnippet'>
+                            <p className="searchPage_resultSnippet">
                                 {item.snippet}
                             </p>
                         </div>
