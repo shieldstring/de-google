@@ -1,4 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# About this project
+<ul>
+  <li>Used context Api(redux)</li>
+  <li>Material UI for Icons</li>
+  <li>React Roucter - to display results instantly without refresh</li>
+  <li>Google Custom Search Api</li>
+  <li>Made a custom hook with react</li>
+  <li>Firebase to setup the app to connent to google</li>
+  <li>Used Firebase hosting to deploy the App [de-google-clone](https://de-goo-clone.web.app/)</li>
+</ul>
 
 ## Available Scripts
 
